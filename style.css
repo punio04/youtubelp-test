@@ -3457,14 +3457,14 @@ html {
 
   .btn-wrap .title::before {
     top: 32%;
-    left: 68%;
+    left: 70%;
     width: 0.8rem;
     height: 1.4rem;
   }
 
   .btn-wrap .title::after {
     top: 32%;
-    right: 68%;
+    right: 70%;
     width: 0.8rem;
     height: 1.4rem;
   }
