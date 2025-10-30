@@ -3761,3 +3761,59 @@ html {
 .faq__question.open::after {
   transform: translateY(-50%) rotate(-45deg);
 }
+
+
+/* iPhoneでフォーム入力時のズームを防止 */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="checkbox"],
+textarea,
+select {
+  font-size: 16px !important;
+  /* ←これがポイント */
+}
+
+/* 個人情報同意エリアの調整 */
+.agree-row {
+  margin-top: 1.5rem;
+}
+
+.agree-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  line-height: 1.7;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.agree-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* チェックボックスのサイズ調整（スマホでデカくならない） */
+.agree-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+/* スマホ用の余白調整 */
+@media (max-width: 768px) {
+  .agree-box {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .agree-check {
+    font-size: 0.9rem;
+    gap: 0.4rem;
+  }
+}
