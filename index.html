@@ -24,10 +24,6 @@
 
   <!-- favicon -->
   <link rel="icon" href="https://adgate.co.jp/wp-content/themes/pj_AdGate/img/favicon.ico">
-
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-    type="332eccaf55fb705be3c77950-text/javascript"></script>
 </head>
 
 <body>
@@ -74,25 +70,26 @@
       </header>
       <!-- drawer menu -->
       <div class="l-drawer__menu">
-        <a class="l-drawer__logo" href="#top"><img
-            data-pagespeed-lazy-src='img/logo-white.png' alt='アドゲート' width='220px' height='58px' loading='lazy' data-pagespeed-url-hash="186215917" src="img/logo-white.png">
+        <a class="l-drawer__logo" href="#top"><img data-pagespeed-lazy-src='img/logo-white.png' alt='アドゲート'
+            width='220px' height='58px' loading='lazy' data-pagespeed-url-hash="186215917" src="img/logo-white.png">
         </a>
         <ul class="l-drawer__list">
           <li class="l-drawer__item in"><a href="#price">料金</a></li>
           <li class="l-drawer__item in"><a href="#example">活用事例</a></li>
           <li class="l-drawer__item in"><a href="#flow">サービス一覧</a></li>
           <li class="l-drawer__item in"><a href="#faq">よくある質問</a></li>
-        <div class="l-drawer__btn-wrap">
-          <div class="btn download">
-            <a href="#form">無料相談</a>
+          <div class="l-drawer__btn-wrap">
+            <div class="btn download">
+              <a href="#form">無料相談</a>
+            </div>
           </div>
-        </div>
       </div>
       <!-- key -->
       <div class="p-fv" id="top">
         <div class="l-inner">
           <div class="p-fv__img">
-            <img class="u-hidden--sp" src="img/fv_illust.png" alt="パソコンとスマホ" width="562px" height="566px" loading="lazy">
+            <img class="u-hidden--sp" src="img/fv_illust.png" alt="パソコンとスマホ" width="562px" height="566px"
+              loading="lazy">
             <img class="u-hidden--pc" src="img/fv_illust.png" alt="パソコンとスマホ" width="17.027rem" height="9.657rem"
               loading="lazy">
           </div>
@@ -175,8 +172,7 @@
         <figure>
           <picture>
             <source media="(max-width: 768px)" srcset="img/img_worry_01_sp.png">
-            <img src="img/img_worry_01.png"
-              alt="お悩み">
+            <img src="img/img_worry_01.png" alt="お悩み">
           </picture>
         </figure>
       </div>
@@ -309,7 +305,8 @@
               </div>
             </div>
             <p class="achievement-txt">登録者5,310人のBtoB向け<br class="u-hidden--pc">YouTubeチャンネル。<br>
-              企業向け広告運用コンサルティング<br class="u-hidden--pc">サービスの集客にYouTubeを活用し、<br>計20本の動画投稿で毎月50件の<br class="u-hidden--pc">リード獲得に成功。<br>
+              企業向け広告運用コンサルティング<br class="u-hidden--pc">サービスの集客にYouTubeを活用し、<br>計20本の動画投稿で毎月50件の<br
+                class="u-hidden--pc">リード獲得に成功。<br>
               YouTube経由での累計売上は<br class="u-hidden--pc">4,000万を超える。</p>
           </div>
         </div>
@@ -383,7 +380,8 @@
         </div>
       </div>
       <div class="btn-wrap btn-arrow">
-        <p class="p-contact-link-bottom _black">軽い相談だけでも...<br>とお困りの方はまずはお気軽に<br class="u-hidden--pc"><span class="y-border">ご相談</span>ください！</p>
+        <p class="p-contact-link-bottom _black">軽い相談だけでも...<br>とお困りの方はまずはお気軽に<br class="u-hidden--pc"><span
+            class="y-border">ご相談</span>ください！</p>
         <div class="btn">
           <a class="contact" href="#form">
             <span>無料相談はこちら</span>
@@ -541,13 +539,14 @@
 
             <div class="row">
               <p>電話番号<span class="required">必須</span></p>
-              <input type="text" name="電話番号" id="phone" required maxlength="13" placeholder="例）09012345678" inputmode="numeric"
-                pattern="\d*" />
+              <input type="tel" name="電話番号" id="phone" required maxlength="11" minlength="10" pattern="^\d{10,11}$"
+                placeholder="例）09012345678" inputmode="numeric">
             </div>
 
             <div class="row">
               <p>お問い合わせ内容<span class="optional">任意</span></p>
-              <textarea name="お問い合わせ内容" cols="5" rows="5" placeholder="例）消化器クリニックを経営しています。YouTube運用についてご相談したいです。"></textarea>
+              <textarea name="お問い合わせ内容" cols="5" rows="5"
+                placeholder="例）消化器クリニックを経営しています。YouTube運用についてご相談したいです。"></textarea>
             </div>
 
             <!-- ▼ 個人情報に関する同意欄 -->
@@ -632,6 +631,19 @@
       phoneInput.addEventListener("input", function (e) {
         // 数字以外を除去
         this.value = this.value.replace(/[^0-9]/g, "");
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('.p-form__table');
+      const submitBtn = form.querySelector('input[type="submit"]');
+
+      form.addEventListener('submit', function () {
+        // ボタン無効化（見た目そのまま）
+        submitBtn.disabled = true;
+        submitBtn.style.pointerEvents = 'none';
+        submitBtn.style.opacity = '0.7'; // ←薄くしたくなければ削除OK
       });
     });
   </script>

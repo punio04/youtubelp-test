@@ -3716,3 +3716,23 @@ html {
 .l-drawer__icon.is-active .bar3 {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+
+
+
+
+
+
+
+.faq__question {
+  position: relative;
+  cursor: pointer;
+  padding-right: 30px;
+  /* 右側に余白（矢印スペース） */
+}
+
+
+/* 開いた時（.openがJSで付く） */
+.faq__question.open::after {
+  transform: translateY(-50%) rotate(-45deg);
+  /* ▲反転 */
+}
