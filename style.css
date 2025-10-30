@@ -2806,7 +2806,6 @@ img {
   border: none;
   border-radius: 4px;
   background: #fff;
-  padding: 0.9375rem 1.25rem;
   width: 44.25rem;
   font-weight: 400;
   font-size: 1rem;
@@ -2905,7 +2904,7 @@ img {
   .p-form__table input:not([type="radio"]),
   .p-form__table textarea {
     width: 100%;
-    padding: 1rem 2rem;
+
     font-size: 18px;
     letter-spacing: -0.01em;
   }
@@ -3654,11 +3653,6 @@ html {
     margin: 15px;
     padding: 10px
   }
-
-  .agree-check input[type="checkbox"] {
-    width: 10px;
-    height: 10px;
-  }
 }
 
 
@@ -3774,4 +3768,104 @@ textarea,
 select {
   font-size: 16px !important;
   /* ←これがポイント */
+}
+
+
+
+
+
+
+/* ====== 同意チェック ====== */
+.agree-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #333;
+  margin-top: 0.8rem;
+}
+
+/* ====== カスタムチェックボックス ====== */
+.agree-check input[type="checkbox"] {
+  appearance: none;
+  /* 全ブラウザで見た目リセット */
+  -webkit-appearance: none;
+  width: 18px !important;
+  height: 18px;
+  border: 1.8px solid #ccc;
+  border-radius: 3px;
+  background: #fff;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ====== チェック時 ====== */
+.agree-check input[type="checkbox"]:checked {
+  background-color: #0076FF;
+  border-color: #3b3b3b00;
+}
+
+.agree-check input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}
+
+/* ====== モバイル調整 ====== */
+@media screen and (max-width: 768px) {
+  .agree-check {
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .agree-check input[type="checkbox"] {
+    width: 17px !important;
+    height: 17px;
+  }
+}
+
+
+.p-form__table textarea input#phone {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  background: #fff;
+  padding: 0.9375rem 1.25rem;
+  width: 44.25rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 550px) {
+  .p-form__table textarea {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+}
+
+.p-form__table textarea {
+  height: 6.25rem;
+  resize: none;
+  padding: 0.9375rem 1.25rem;
+}
+
+input#phone {
+  padding: 0.9375rem 1.25rem;
+}
+
+input[type="email"] {
+  padding: 0.9375rem 1.25rem;
+}
+
+input[type="text"] {
+  padding: 0.9375rem 1.25rem;
 }
