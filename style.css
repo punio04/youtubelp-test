@@ -3654,6 +3654,11 @@ html {
     margin: 15px;
     padding: 10px
   }
+
+  .agree-check input[type="checkbox"] {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 
